@@ -124,6 +124,26 @@ public class TennisGameTest {
 		 
 		 assertEquals("Player1 has advantage", "player1 has advantage", score);
 	}
+	@Test
+	public void testTennisGame_Player1Advantage_p1() throws TennisGameException{
+		 TennisGame game = new TennisGame();
+		 
+		 game.player1Scored();
+		 game.player1Scored();
+		 game.player1Scored();
+		 
+		 game.player2Scored();
+		 game.player2Scored();
+		 game.player2Scored();
+		 game.player2Scored();
+		 
+		 game.player1Scored();
+		 game.player2Scored();
+		 
+		 String score = game.getScore();
+		 
+		 assertNotEquals("testi123", "player1 has advantage", score);
+	}
 	
 	@Test
 	public void testTennisGame_Player2Advantage() throws TennisGameException{
@@ -142,6 +162,26 @@ public class TennisGameTest {
 		 String score = game.getScore();
 		 
 		 assertEquals("Player2 has advantage", "player2 has advantage", score);
+	}
+	@Test
+	public void testTennisGame_Player2Advantage_p1() throws TennisGameException{
+		 TennisGame game = new TennisGame();
+		 
+		 game.player2Scored();
+		 game.player2Scored();
+		 game.player2Scored();
+		 
+		 game.player1Scored();
+		 game.player1Scored();
+		 game.player1Scored();
+		 game.player1Scored();
+		 
+		 game.player2Scored();
+		 game.player1Scored();
+		 
+		 String score = game.getScore();
+		 
+		 assertNotEquals("testi123", "player2 has advantage", score);
 	}
 	
 	@Test
